@@ -1,0 +1,13 @@
+<div class="contenedor">
+    <router-outlet></router-outlet>
+</div>
+<div>
+    <!-- <nav mat-tab-nav-bar background="primary">
+        <a mat-tab-link *ngFor="let link of links" (click)="activeLink = link" [active]="activeLink == link"> {{ link }}</a>
+    </nav> -->
+    <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Inicio"><app-inicio></app-inicio></mat-tab>
+        <mat-tab label="Login"><app-login></app-login></mat-tab>
+        <a href="perfil"><mat-tab label="Perfil"><app-perfil></app-perfil></mat-tab></a>
+    </mat-tab-group>
+</div>

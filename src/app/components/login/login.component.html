@@ -1,1 +1,15 @@
-<p>login works!</p>
+<form [formGroup]="loginForm" (submit)="iniciarSesion(loginForm.value)">
+    <mat-form-field appearance="outline">
+        <mat-label>Usuario:</mat-label>
+        <input matInput formControlName="user" maxlength="20"> 
+        <mat-hint align="end">{{ loginForm.value.user.length }}/20</mat-hint>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+        <mat-label>Contraseña:</mat-label>
+        <input matInput type="password" formControlName="password" maxlength="50">
+        <mat-hint align="end">{{ loginForm.value.password.length }}/50</mat-hint>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+</form>

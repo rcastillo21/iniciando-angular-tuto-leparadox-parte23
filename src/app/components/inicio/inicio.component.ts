@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss']
 })
-export class InicioComponent implements OnInit {
+export class InicioComponent {
 
-  constructor() { }
+  constructor(
+    public _data: DataService
+  ) { }
 
-  ngOnInit(): void {
+  cerrarSesion() {
+    this._data.logueado = false;
   }
-
 }
